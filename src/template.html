@@ -5,10 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root" class="app">
+
+      <header class="app-header">
+        <h1>Testimonials</h1>
+        <h2>What our clients say about us</h2>
+      </header>
+
+      <main class="app-main testimonials">
+        <section class="testimonials-content">
+          <div class="icon icon-quote"></div>
+          <div class="testimonials-text">
+            <p>
+              I have worked with a number of software developers before but none of them quite reached the level of professionalism, diligence and enthusiasm that I experienced with Vitaliy and his team. They are incredibly easy to work with and almost always find great programming solutions to our requirements.
+              <br>
+              What I especially liked about the SoftFormance team is their passion and understanding for our project. It’s like working with friends. Friends that deliver on their promises. I have nothing but praise for the work of SoftFormance team and look forward to working with this agency in the future.
+            </p>
+
+            <h4>Wolfgang Männel</h4>
+
+            <p>Founder and Managing Director, <a href="#" class="link">Fotografen365</a> </p>
+          </div>
+        </section>
+        <section class="testimonials-gallery">
+          <div class="gallery-item">
+            <img src="/assets/gallery-item.png">
+          </div>
+          <div class="gallery-buttons">
+            <span class="gallery-button"></span>
+            <span class="gallery-button span"></span>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <h2>Leave your feedback</h2>
+        <p>If you had a chance to work with us, please, leave your feedback and we’ll happily add it to our testimonials page. Thank you!</p>
+        <a href="#" class="button">leave your feedback</a>
+      </footer>
+
+    </div>
   </body>
 </html>

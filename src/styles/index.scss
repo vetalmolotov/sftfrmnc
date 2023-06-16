@@ -3,5 +3,9 @@
   src: url('../fonts/Inter.ttf');
 }
 
+@import "normalize.css";
 @import 'variables';
+@import "mixins";
 @import 'scaffolding';
+@import "icons";
+@import "testimonials";

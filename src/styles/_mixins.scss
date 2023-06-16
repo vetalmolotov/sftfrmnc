@@ -1,0 +1,43 @@
+$desktop-min-width: 1024px;
+$mobile-max-width: 900px;
+
+@mixin tablet {
+  @media screen and (max-width: #{$desktop-min-width}) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: #{$mobile-max-width}) {
+    @content;
+  }
+}
+
+@mixin flex-h {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-v {
+  display: flex;
+  justify-content: center;
+}
+@mixin flex-vh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button {
+  @include flex-vh;
+  padding: 0 32px;
+  min-height: 54px;
+  background: #F3741C;
+  border-radius: 26px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 26px;
+  color: $text-button;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+}

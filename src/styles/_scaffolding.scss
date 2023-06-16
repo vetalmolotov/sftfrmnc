@@ -1,20 +1,135 @@
 html {
   font-size: $font-size;
   font-family: $font-family;
-  background: $background-color;
-  color: $font-color;
-  line-height: 1.4;
 }
-
+* {
+  box-sizing: border-box;
+}
+body, p, h1, h2, h3, h4, ul, li {
+  padding: 0;
+  margin: 0;
+}
 body {
-  margin: auto;
-  text-align: center;
-  max-width: $page-width;
+  background: $bg-body;
+}
+.link {
+  display: inline-block;
+  position: relative;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 26px;
+  text-decoration: none;
+  color: $text-main;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: $main;
+    transition: opacity 500ms;
+    opacity: 1 ;
+  }
+  &:hover {
+    &::after {
+      opacity: 0;
+    }
+  }
 }
 
-h1 {
-  margin: 0 0 2rem;
+.button {
+  @include button;
 }
+
+.app {
+  width: calc(100% - 32px);
+  @include flex-h;
+  flex-direction: column;
+  padding: 32px 16px;
+  // By component based flow i must to split CSS of header and footer
+  // in separate files, but those sections contains a few elements
+  // so i decide to leave styles here
+  @include mobile {
+    width: 100%;
+    padding: 32px 0;
+  }
+  &-header {
+    @include flex-h;
+    width: 100%;
+    max-width: 1370px;
+    flex-direction: column;
+    margin: 0 0 60px;
+    text-align: center;
+    @include tablet {
+      margin: 0 0 32px;
+    }
+    h1 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 21px;
+      color: $main;
+      margin: 0 0 16px;
+    }
+    h2 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 68px;
+      color: $text-main;
+      margin: 0;
+      @include mobile {
+        font-size: 32px;
+        line-height: 38px;
+      }
+    }
+  }
+  &-footer {
+    @include flex-h;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    @include tablet {
+      width: 100%;
+      padding: 0 16px;
+    }
+    h2 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 68px;
+      margin: 0 0 20px;
+      @include mobile {
+        font-size: 32px;
+        line-height: 38px;
+      }
+    }
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 32px;
+      margin: 0 0 48px;
+      @include mobile {
+        margin: 0 0 32px;
+      }
+    }
+    .button {
+      max-width: 220px;
+    }
+  }
+  &-main {
+    margin: 0 0 160px;
+    @include tablet {
+      margin: 0 0 32px;
+    }
+  }
+}
+
+
 
 .image {
   display: inline-block;

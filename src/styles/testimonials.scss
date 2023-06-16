@@ -1,0 +1,136 @@
+.testimonials {
+  display: flex;
+  width: 100%;
+  max-width: 1370px;
+  background: $bg-main;
+  @include mobile {
+    flex-direction: column;
+    background: none;
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 788px;
+    padding: 70px 105px;
+    background: $bg-main;
+    @include tablet {
+      padding: 32px 64px;
+    }
+    @include mobile {
+      padding: 32px;
+      max-width: 100%;
+    }
+  }
+  .icon-quote {
+    width: 30px;
+    height: 23px;
+    margin: 0 0 32px;
+    svg {
+      width: 30px;
+      height: 23px;
+      path {
+        fill: $icon-quote;
+      }
+    }
+    @include tablet {
+      margin-bottom: 16px;
+    }
+  }
+  &-text {
+    width: 100%;
+    max-width: 566px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    @include tablet {
+      max-width: 100%;
+    }
+    p:first-child {
+      margin-bottom: 40px;
+      @include mobile {
+        margin-bottom: 32px;
+      }
+    }
+    h4 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 26px;
+      margin: 0 0 2px;
+    }
+  }
+  &-gallery {
+    width: 582px;
+    position: relative;
+    @media screen and (max-width: 1279px) {
+      align-self: center;
+      width: 500px;
+      height: 515px;
+    }
+    @include tablet {
+      width: 400px;
+      height: 415px;
+    }
+    @include mobile {
+      width: 100%;
+      height: auto;
+    }
+    .gallery-item {
+      width: 582px;
+      height: 597px;
+      object-fit: contain;
+      @media screen and (max-width: 1279px) {
+        width: 500px;
+        height: 515px;
+      }
+      @include tablet {
+        width: 400px;
+        height: 415px;
+      }
+      @include mobile {
+        width: 100%;
+        height: auto;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .gallery-buttons {
+      display: flex;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 110px;
+      height: 55px;
+      @include mobile {
+        bottom: 4px;
+      }
+      span {
+        @include flex-vh;
+        width: 55px;
+        height: 55px;
+        background: $main;
+        cursor: pointer;
+        &.active {
+          svg {
+            opacity: 1;
+          }
+        }
+        svg {
+          width: 10px;
+          height: 14px;
+          opacity: 0.7;
+          path {
+            stroke: $text-button;
+          }
+        }
+        &:first-child {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
